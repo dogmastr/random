@@ -36,7 +36,6 @@ int dfs(int i, int j) {
 }
 
 int main() {
-
     int maxSum = 0;
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS; j++) {
