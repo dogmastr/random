@@ -1,17 +1,23 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
-std::vector<std::vector<int>> board {{
+// O(ROWS * COLS) time.
+// O(ROWS * COLS) recursion stack, O(1) auxiliary space.
+std::vector<std::vector<int>> board {
     {0, 1, 1, 0, 0, 0, 1, 1},
     {0, 0, 1, 0, 0, 1, 0, 0},
     {0, 0, 0, 1, 0, 0, 0, 0},
     {0, 0, 0, 0, 1, 1, 1, 1}
-}};
+};
+
+const int ROWS = board.size();
+const int COLS = board[0].size();
 
 int dfs(int i, int j) {
 
     // Check boundary & base case
-    if (i < 0 || j < 0 || i >= board.size() || j >= board[0].size() || board[i][j] == 0) 
+    if (i < 0 || j < 0 || i >= ROWS || j >= COLS || board[i][j] == 0) 
         return 0;
 
     // Mark as visited
@@ -30,9 +36,10 @@ int dfs(int i, int j) {
 }
 
 int main() {
+
     int maxSum = 0;
-    for (int i = 0; i < board.size(); i++) {
-        for (int j = 0; j < board[0].size(); j++) {
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
             if (board[i][j] == 1) {
                 maxSum = std::max(maxSum, dfs(i, j));
             }
