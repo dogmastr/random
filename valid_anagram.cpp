@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 
+// Similar to Leetcode #242
+
 // O(n) time, where n is length of strings.
 // O(1) space.
 bool isAnagram(const std::string &s1, const std::string &s2) {

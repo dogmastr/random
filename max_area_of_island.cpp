@@ -2,6 +2,8 @@
 #include <vector>
 #include <algorithm>
 
+// Similar to Leetcode #695
+
 // O(ROWS * COLS) time.
 // O(ROWS * COLS) recursion stack, O(1) auxiliary space.
 std::vector<std::vector<int>> board {

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+// Similar to Leetcode #26
+
 // O(n) time
 // O(1) space
 int main() {
